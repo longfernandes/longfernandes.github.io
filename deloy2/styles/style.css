@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial,  sans-serif;
+}
+.home {
+    width: 50%;
+    height: 50%;
+    border: 1px solid black;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.hearder_Day2 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px;
+    background-color: aquamarine;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    padding: 70px;
+    background-color: #b2ebf2;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background-color: aliceblue;
+    
+}
+
+.row {
+    display: flex;
+    gap: 1px;
+    justify-content: center;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #555;
+    border-radius: 5px;
+}
+.box-5 { background-color: #c2b5ff; } 
+.box-2 { background-color: #f19a9a; } 
+.box-3 { background-color: #add8e6; }
+.box-4 { background-color: #b2ebf2; }
+.box-1 { background-color: #f3d7a1; } 
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 10vh;
+}
+.middle {
+    display: flex;
+    flex: 1;
+}
+
+.side {
+    width: 10%;
+    background-color: #4682b4; 
+}
+
+.center {
+    flex: 1;
+    background-color: #add8e6; 
+}
