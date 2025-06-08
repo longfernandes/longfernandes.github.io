@@ -1,0 +1,100 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.body-bg {
+  background-image: url('https://images.unsplash.com/photo-1606788075760-f4aa5d05f2d5');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  width: 800px;
+  max-width: 95%;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.form-subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1 1 calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+input[type="tel"] {
+  padding: 8px 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.checkbox-group {
+  flex: 1 1 100%;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+.center {
+  text-align: center;
+}
+.submit-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+}
+.submit-btn {
+  padding: 10px 10px;
+  background-color: #f60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+  min-width: 160px;
+}
+
+.submit-btn:hover {
+  background-color: #e65c00;
+}
