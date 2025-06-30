@@ -1,11 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import './index.css'
-import App from './App.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';  // Sử dụng đúng import cho React 18
+import { Provider } from 'react-redux';
+import store from './redux/store'; // Import store
+import App from './App';
+import './index.css';
 
-createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+// Tạo root với createRoot thay cho render
+const root = ReactDOM.createRoot(document.getElementById('root'));  // Tạo root mới
+root.render(
+  <Provider store={store}> {/* Đảm bảo store được bọc ứng dụng */}
     <App />
-  </BrowserRouter>,
-)
+  </Provider>
+);
