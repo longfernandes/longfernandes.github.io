@@ -8,36 +8,36 @@ function ListMenuPage() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { addToCart } = useContext(CartItemsContext);
 
-  // Load menu và trạng thái đăng nhập
+
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("menus") || "[]");
     setMenus(saved);
 
     const user = localStorage.getItem("user");
-    setIsLoggedIn(!!user); // true nếu có user
+    setIsLoggedIn(!!user); 
   }, [showModal]);
 
-  // Tính tổng tiền của 1 menu
+  
   const calculateTotal = (items) => {
     return items.reduce((sum, item) => sum + parseFloat(item.price), 0).toFixed(2);
   };
 
-  // Xóa 1 menu
+  
   const handleDeleteMenu = (indexToDelete) => {
     const updatedMenus = menus.filter((_, index) => index !== indexToDelete);
     localStorage.setItem("menus", JSON.stringify(updatedMenus));
     setMenus(updatedMenus);
   };
 
-  // Thêm 1 menu vào giỏ hàng
+ 
   const handleSelectMenu = (menu, idx) => {
     const menuItem = {
-        id: menu.id || `menu-${idx}`, // Tạo id nếu chưa có
+        id: menu.id || `menu-${idx}`,
         name: menu.name,
         price: parseFloat(calculateTotal(menu.items)),
         quantity: 1,
-        type: "menu", // Phân biệt với món lẻ
-        image: "https://amia.vn/wp-content/uploads/2021/10/hinh-anh-cac-mon-an-ngon-nhan-lam-theo-yeu-cau-rieng.jpg", // dùng ảnh đầu tiên hoặc ảnh mặc định
+        type: "menu",
+        image: "https://amia.vn/wp-content/uploads/2021/10/hinh-anh-cac-mon-an-ngon-nhan-lam-theo-yeu-cau-rieng.jpg", 
 
     };
     addToCart(menuItem);
@@ -50,7 +50,7 @@ function ListMenuPage() {
         {isLoggedIn && (
           <button
             onClick={() => setShowModal(true)}
-            className="mt-4 sm:mt-0 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+            className="mt-4 sm:mt-0 bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-800"
           >
             Tạo menu cá nhân
           </button>
@@ -61,7 +61,7 @@ function ListMenuPage() {
         <p>Chưa có menu nào.</p>
       ) : (
         menus.map((menu, idx) => (
-          <div key={idx} className="border rounded-lg mb-6 p-4 bg-white shadow">
+          <div key={idx} className="border-orange-500 rounded-xl mb-6 p-4 bg-white shadow">
             <div className="flex justify-between items-center mb-4">
               <div>
                 <h3 className="text-xl font-semibold">
@@ -82,7 +82,7 @@ function ListMenuPage() {
                 )}
                 <button
                   onClick={() => handleSelectMenu(menu, idx)}
-                  className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
+                  className="bg-orange-500 text-white px-4 py-1 rounded hover:bg-orange-800"
                 >
                   Chọn menu
                 </button>
@@ -96,7 +96,7 @@ function ListMenuPage() {
                     className="w-28 h-28 object-cover rounded"
                     />
                 )}
-                <ul className="flex-1 space-y-1">
+                <ul className="flex-1 font-bold space-y-1">
                     {menu.items.map((item) => (
                     <li key={item.id} className="text-sm text-gray-700 flex justify-between">
                     <span>• {item.name}</span>

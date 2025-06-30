@@ -1,6 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function AboutSection1() {
+    const navigate = useNavigate();
+
+    function handViewGallery() {
+        navigate("/gallery")
+    }
 
     return (
        <div className="p-15 px-30">
@@ -9,7 +15,9 @@ function AboutSection1() {
                     <h2 className="text-4xl font-bold leading-snug">
                         SỰ LỰA CHỌN ẨM <br /> THỰC SỐ 1
                     </h2>
-                    <button className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-4 px-4 rounded">
+                    <button 
+                        onClick={handViewGallery}
+                        className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-4 px-4 rounded">
                         XEM HÌNH ẢNH TIỆC
                     </button>
                 </div>
@@ -24,7 +32,7 @@ function AboutSection1() {
                             allowFullScreen
                         />
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:text-lg lg:text-lg text-justify">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6  sm:text-lg lg:text-lg text-justify">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porta ante dui, nec condimentum diam auctor nec. sInteger auctor turpis odio, eu lacinia lorem ultricies at. Morbi maximus in sem vitae tempor. Donec dictum lectus et bibendum faucibus. Integer mollis arcu sit amet mollis blandit.                        </p>
                         <p>

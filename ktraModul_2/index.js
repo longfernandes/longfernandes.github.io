@@ -102,7 +102,7 @@ function renderTodos(filter = 'all') {
   `).join('');
 }
 
-// Thêm bài viết mới cho user hiện tại
+
 document.getElementById('addPostBtn').addEventListener('click', () => {
     if (!currentUser) return alert('Bạn phải đăng nhập trước');
   

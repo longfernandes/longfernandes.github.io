@@ -34,7 +34,7 @@ function CreateMenuModal({ onClose, onSave }) {
       type: menuType,
        items: selectedItems.map(item => ({
       ...item,
-      price: item.price || (Math.random() * 20 + 5).toFixed(2)  // nếu chưa có price
+      price: item.price || (Math.random() * 20 + 5).toFixed(2) 
     }))
     };
     const savedMenus = JSON.parse(localStorage.getItem("menus") || "[]");
@@ -44,8 +44,14 @@ function CreateMenuModal({ onClose, onSave }) {
 
   return (
     <div className="fixed inset-0 bg-white/30 backdrop-blur-sm z-50 flex items-center justify-center">
-      <div className="bg-white w-4/5 max-w-6xl p-6 rounded-lg shadow-lg relative">
-        <button onClick={onClose} className="absolute top-4 right-5 text-xl">×</button>
+      <div className="relative bg-white w-4/5 max-w-6xl p-6 rounded-lg shadow-lg relative">
+        <button
+            onClick={onClose}
+            className="absolute top-0 right-0 text-gray-500 hover:text-black text-3xl font-bold z-10"
+          >
+            ×
+        </button>
+
 
         <div className="mb-4 flex gap-4 items-center">
           <input
@@ -53,26 +59,26 @@ function CreateMenuModal({ onClose, onSave }) {
             placeholder="Tên menu"
             value={menuName}
             onChange={(e) => setMenuName(e.target.value)}
-            className="border px-4 py-2 w-full rounded"
+            className="border-3 border-orange-500 px-4 py-2 w-full rounded"
           />
           <select
             value={menuType}
             onChange={(e) => setMenuType(e.target.value)}
-            className="border px-4 py-2 rounded"
+            className="border-3 font-bold text-lg border-orange-500 px-6 py-2 rounded"
           >
-            <option value="cá nhân">Cá nhân</option>
-            <option value="gia đình">Gia đình</option>
+            <option value="cá nhân" className="text-lg font-bold">Cá nhân</option>
+            <option value="gia đình" className="text-lg font-bold">Gia đình</option>
           </select>
         </div>
 
         <div className="grid grid-cols-2 gap-6">
-          <div className="border p-4 rounded overflow-y-auto h-96">
-            <h3 className="text-lg font-semibold mb-2">Tất cả món ăn</h3>
+          <div className="border-3 border-orange-500 p-4 rounded overflow-y-auto h-96">
+            <h3 className="text-lg font-bold mb-2">Tất cả món ăn</h3>
             <div className="grid grid-cols-4 gap-2">
                 {allItems.map((item) => (
                     <div
                     key={item.id}
-                    className="border p-2 rounded relative group hover:bg-gray-100 cursor-pointer"
+                    className="border-3 border-orange-500 font-semibold p-2 rounded relative group hover:bg-gray-100 cursor-pointer"
                     >
                     <button
                         onClick={() => handleSelect(item)}
@@ -88,13 +94,13 @@ function CreateMenuModal({ onClose, onSave }) {
 
           </div>
 
-          <div className="border p-4 rounded overflow-y-auto h-96">
-            <h3 className="text-lg font-semibold mb-2">Món đã chọn</h3>
+          <div className="border-3 border-orange-500 p-4 rounded overflow-y-auto h-96">
+            <h3 className="text-lg font-bold mb-2">Món đã chọn</h3>
             <div className="grid grid-cols-4 gap-2">
                 {selectedItems.map((item) => (
                     <div
                     key={item.id}
-                    className="border p-2 rounded relative group"
+                    className="border-3 border-orange-500 p-2 rounded relative group"
                     >
                     <button
                         onClick={() => handleRemove(item)}
@@ -110,12 +116,12 @@ function CreateMenuModal({ onClose, onSave }) {
           </div>
         </div>
            <div className="mt-6">
-          <label className="block mb-1 text-sm font-medium text-gray-700">Ghi chú</label>
+          <label className="block mb-1 text-lg font-bold text-gray-700">Ghi chú</label>
           <textarea
             value={note}
             onChange={(e) => setNote(e.target.value)}
             placeholder="Nhập ghi chú cho menu..."
-            className="w-full border px-4 py-2 rounded bg-white text-sm text-gray-700 h-24 resize-none"
+            className="w-full border-3 border-orange-500 px-4 py-2 rounded bg-white text-sm text-gray-700 h-24 resize-none"
           />
         </div>
 

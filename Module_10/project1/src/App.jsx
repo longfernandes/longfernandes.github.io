@@ -13,6 +13,12 @@ import { AuthProvider } from './context/AuthContext'
 import SignupPage from './pages/SignupPage'
 import ListMenuPage from './pages/ListMenuPage'
 import CartPage from './pages/CartPage'
+import OderStatusPage from './pages/OderStatusPage'
+import GalleryPage from './pages/GalleryPage'
+import ProfilePage from './pages/ProfilePage'
+import AddressPage from './pages/AddressPage'
+import SavedCodePage from './pages/SavedCodePage'
+import OrderListPage from './pages/OrderListPage'
 
 function App() {
   
@@ -35,10 +41,15 @@ function App() {
         <Route path='/login' element={<LoginPage />} />
         <Route path='/list-menu' element={<ListMenuPage />}/>
         <Route path='/cart' element={<CartPage />} />
+        <Route path='/order-status' element={<OderStatusPage />} />
+        <Route path='/gallery' element={<GalleryPage />} />
+        <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/address' element={<AddressPage />} />
+        <Route path='/saved' element={<SavedCodePage />} />
+        <Route path='/order-list' element={<OrderListPage />} />
       </Route>
 
       <Route path='/Signup' element={<SignupPage />} />
-      
     </Routes>
     </CartItemsProvider>
     </AuthProvider>

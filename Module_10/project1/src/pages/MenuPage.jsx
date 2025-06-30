@@ -42,7 +42,7 @@ function MenuPage() {
     <div className="max-w-8xl mx-auto px-20 py-10">
       <Link
         to="/list-menu"
-        className="fixed bottom-6 right-6 z-50 bg-red-500 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-600 transition"
+        className="fixed bottom-6 right-6 z-50 font-bold bg-red-500 text-white px-7 py-3 rounded-full shadow-lg hover:bg-blue-600 transition"
       >
         List Menu
       </Link>
